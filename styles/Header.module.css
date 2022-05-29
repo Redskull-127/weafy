@@ -1,0 +1,37 @@
+.imgmain{
+    margin-top: 7em;
+    height: 100px;
+    animation: round 6s infinite;
+}
+
+.test{
+    margin-top: 8em;
+    width: 50%;
+    background-color: rgb(180, 178, 178);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+/* .info h1{
+    padding: 52px
+} */
+
+@keyframes round{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
