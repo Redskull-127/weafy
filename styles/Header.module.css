@@ -23,9 +23,9 @@
     font-size: 35px;
 }
 
-/* .info h1{
-    padding: 52px
-} */
+.sucbtn{
+    margin-top: 30px;
+}
 
 @keyframes round{
     0%{

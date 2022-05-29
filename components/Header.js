@@ -10,6 +10,7 @@ export default function Header() {
   useEffect(() => {
     const textbox = document.getElementById("textbox");
     const info = document.getElementById("info");
+    const sucbtn = document.getElementById("sucbtn");
     textbox.addEventListener("keypress", function (key) {
       if (key.code == "Enter") {
         function fet() {
@@ -31,6 +32,25 @@ export default function Header() {
         fet();
       }
     });
+    sucbtn.addEventListener("click",function(){
+      function fet() {
+        fetch(
+          "https://api.weatherapi.com/v1/current.json?key=7a3680f23e024fa7b60153535222805&q=" +
+            textbox.value
+        )
+          .then((res) => res.json())
+          .then((json) => {
+            setItems(json);
+            console.log(json);
+          })
+          .then(
+            (info.innerHTML = `<h1> ${items.location.name} ${items.current.condition.text}</h1><h2> ${items.current.temp_c} deg </h2>`)
+          )
+          .then((textbox.style.marginTop = "250px"))
+          .then(setIcon(`${items.current.condition.icon}`));
+      }
+      fet();
+    })
   });
 
   return (
@@ -44,6 +64,7 @@ export default function Header() {
         placeholder="eg Ahemdabad, Surat etc"
         autoFocus={true}
       />
+      <button type="button" id="sucbtn" className={`btn btn-success ${styles.sucbtn}`}>Get</button>
       <div className={styles.info} id="info"></div>
     </center>
   );
