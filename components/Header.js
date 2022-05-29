@@ -14,7 +14,7 @@ export default function Header() {
       if (key.code == "Enter") {
         function fet() {
           fetch(
-            "http://api.weatherapi.com/v1/current.json?key=7a3680f23e024fa7b60153535222805&q=" +
+            "https://api.weatherapi.com/v1/current.json?key=7a3680f23e024fa7b60153535222805&q=" +
               textbox.value
           )
             .then((res) => res.json())
