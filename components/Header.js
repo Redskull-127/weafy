@@ -1,5 +1,7 @@
 import styles from "../styles/Header.module.css";
 import React, { Component, useState, useEffect } from "react";
+import Draggable, { DraggableCore } from "react-draggable";
+import ReactDOM from "react-dom";
 
 export default function Header() {
   const [items, setItems] = useState([]);
@@ -55,8 +57,22 @@ export default function Header() {
 
   return (
     <center>
+      <>
+      <div>
+      <Draggable
+              axis="x"
+              handle=".handle"
+              defaultPosition={{ x: 0, y: 0 }}
+              position={null}
+              grid={[25, 25]}
+              scale={1}
+            >
+      <div className="handle">
       <img src={icon} className={styles.imgmain} />
-
+      </div>
+      </Draggable>
+      </div>
+      </>
       <input
         type="text"
         className={`form-control ${styles.test}`}
